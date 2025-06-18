@@ -6,16 +6,17 @@
  <property name="build.dir" location="bin" />
  <property name="dist.dir" location="dist" />
  <property name="docs.dir" location="docs" />
- 
+
  <!-- Deletes the existing build, docs and dist directory-->
  <target name="clean">
  <delete dir="${build.dir}" />
  <delete dir="${docs.dir}" />
  <delete dir="${dist.dir}" />
  </target>
- 
+
  <!-- Creates the build, docs and dist directory-->
  <target name="makedir">
+ <mkdir dir="${src.dir}" />
  <mkdir dir="${build.dir}" />
  <mkdir dir="${docs.dir}" />
  <mkdir dir="${dist.dir}" />
@@ -26,7 +27,7 @@
  <javac srcdir="${src.dir}" destdir="${build.dir}">
  </javac>
  </target>
- 
+
  <!-- Creates Javadoc -->
  <target name="docs" depends="compile">
  <javadoc packagenames="src" sourcepath="${src.dir}" destdir="${docs.dir}">
@@ -35,7 +36,7 @@
  <include name="**" />
  </fileset>
  </javadoc>
- </target
+ </target>
 
 <!--Creates the deployable war file -->
  <target name="war" depends="compile">
