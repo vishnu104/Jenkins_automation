@@ -6,28 +6,28 @@ pipeline {
         APP_NAME = "my-web-app"
         DOCKER_REGISTRY = "myregistry.com"
     }
-
+//comment-2
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
-
+//comment-3
         stage('Build') {
             steps {
                 echo "Building application for branch: ${env.BRANCH_NAME}"
                 sh './build.sh'
             }
         }
-
+//comment-4
         stage('Test') {
             steps {
                 echo "Running tests for branch: ${env.BRANCH_NAME}"
                 sh './test.sh'
             }
         }
-
+//comment-5
         stage('Deploy') {
             when {
                 branch 'release1'
@@ -50,7 +50,7 @@ pipeline {
             }
         }
     }
-
+//comment-6
     post {
         always {
             echo "Pipeline completed for branch: ${env.BRANCH_NAME}"
