@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-#comment-1
+//qcomment-0
     environment {
         APP_NAME = "my-web-app"
         DOCKER_REGISTRY = "myregistry.com"
