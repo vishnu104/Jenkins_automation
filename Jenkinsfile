@@ -1,7 +1,10 @@
 pipeline {
     agent any
 
+<<<<<<< HEAD
 #comment-1
+=======
+>>>>>>> bee9f95 (critical fixes in prod branch main by mistake)
     environment {
         APP_NAME = "my-web-app"
         DOCKER_REGISTRY = "myregistry.com"
